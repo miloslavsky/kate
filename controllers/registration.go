@@ -51,6 +51,7 @@ func (this *RegController) Post() {
 			os.Mkdir(fmt.Sprintf("../Downloads/%d", user.Id), 466)
 			this.SetSession("userid", user.Id)
 			this.SetSession("username", user.Name)
+			beego.Info(user.Id, user.Name)
 			url := "/user/" + strconv.FormatInt(id, 10)
 			this.Redirect(url, 302)
 		} else {
